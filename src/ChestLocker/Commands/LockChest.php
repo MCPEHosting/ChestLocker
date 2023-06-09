@@ -18,7 +18,7 @@ use pocketmine\player\Player;
 use ChestLocker\Main;
 
 class LockChest extends Command{
-	public function __construct(Main $plugin){
+	public function __construct(protected Main $plugin){
         parent::__construct("lockchest");
 		$this->plugin = $plugin;
         $this->setPermission("cmd.lockchest");

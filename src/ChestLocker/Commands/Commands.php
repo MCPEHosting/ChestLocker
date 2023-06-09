@@ -18,9 +18,7 @@ use ChestLocker\Main;
 
 class Commands extends Command{
 
-    protected $plugin;
-
-	public function __construct(Main $plugin){
+	public function __construct(protected Main $plugin){
         parent::__construct("chestlocker");
 		$this->plugin = $plugin;
         $this->setPermission("cmd.chestlocker");

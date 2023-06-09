@@ -19,7 +19,7 @@ use pocketmine\command\CommandSender;
 use ChestLocker\Main;
 
 class UnlockChest extends Command{
-	public function __construct(Main $plugin){
+	public function __construct(protected Main $plugin){
         parent::__construct("unlockchest");
 		$this->plugin = $plugin;
         $this->setPermission("cmd.unlockchest");

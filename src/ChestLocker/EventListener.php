@@ -21,7 +21,7 @@ use pocketmine\event\block\BlockBreakEvent;
 class EventListener implements Listener
 {
 	
-	public function __construct(Main $plugin)
+	public function __construct(protected Main $plugin)
 	{
 		$this->plugin = $plugin;
 	}
