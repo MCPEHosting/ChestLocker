@@ -14,7 +14,9 @@ namespace ChestLocker;
 use ChestLocker\Commands\Commands;
 use ChestLocker\Commands\LockChest;
 use ChestLocker\Commands\UnlockChest;
+use pocketmine\block\VanillaBlocks;
 use pocketmine\item\ItemIds;
+use pocketmine\item\ItemTypeIds;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
 use pocketmine\utils\Config;
@@ -37,7 +39,7 @@ class Main extends PluginBase{
 	//Item Name/ID
 	const ITEM_NAME = "Chest";
 	const ITEM_NAME_2 = "chest";
-	const ITEM_ID = ItemIds::CHEST;
+	public static ?int $ITEM_ID = null;
 	
 	public $status;
 	public $data;
@@ -71,6 +73,9 @@ class Main extends PluginBase{
 	}
 	
     public function onEnable(): void{
+
+        self::$ITEM_ID = VanillaBlocks::CHEST()->asItem()->getTypeId();
+
         @mkdir($this->getDataFolder());
         @mkdir($this->getDataFolder() . Main::_DIRECTORY);
         $this->saveDefaultConfig();

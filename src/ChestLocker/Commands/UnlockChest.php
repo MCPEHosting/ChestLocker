@@ -22,6 +22,7 @@ class UnlockChest extends Command{
 	public function __construct(Main $plugin){
         parent::__construct("unlockchest");
 		$this->plugin = $plugin;
+        $this->setPermission("cmd.unlockchest");
 	}
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)

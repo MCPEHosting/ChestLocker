@@ -38,7 +38,7 @@ class EventListener implements Listener
 	
 	public function onChestOpen(PlayerInteractEvent $event)
 	{
-		if ($event->getBlock()->getID() == Main::ITEM_ID) {
+		if ($event->getBlock()->getTypeId() == Main::$ITEM_ID) {
 			$chest = $event->getPlayer()->getWorld()->getTile($event->getBlock()->getPosition()->asVector3());
 			if ($chest instanceof Chest) {
 				//Check Command status
@@ -104,7 +104,7 @@ class EventListener implements Listener
 	{
 		$this->cfg = $this->plugin->getConfig()->getAll();
 		$player    = $event->getPlayer();
-		if ($event->getBlock()->getID() == Main::ITEM_ID) {
+		if ($event->getBlock()->getTypeId() == Main::$ITEM_ID) {
 			$chest = $event->getPlayer()->getWorld()->getTile($event->getBlock()->getPosition()->asVector3());
 			if ($chest instanceof Chest) {
 				$level  = $chest->getPosition()->getWorld()->getFolderName();

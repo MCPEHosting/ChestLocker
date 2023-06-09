@@ -23,6 +23,7 @@ class Commands extends Command{
 	public function __construct(Main $plugin){
         parent::__construct("chestlocker");
 		$this->plugin = $plugin;
+        $this->setPermission("cmd.chestlocker");
 	}
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)

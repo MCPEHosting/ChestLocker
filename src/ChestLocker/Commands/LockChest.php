@@ -21,6 +21,7 @@ class LockChest extends Command{
 	public function __construct(Main $plugin){
         parent::__construct("lockchest");
 		$this->plugin = $plugin;
+        $this->setPermission("cmd.lockchest");
 	}
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)

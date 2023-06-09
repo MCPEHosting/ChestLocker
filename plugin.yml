@@ -1,7 +1,7 @@
 name: ChestLocker
 main: ChestLocker\Main
 version: "1.2"
-api: 4.0.0
+api: 5.0.0
 load: STARTUP
 author: EvolSoft
 description: Lock/Unlock Chests.
@@ -25,4 +25,7 @@ permissions:
     description: ""
   cmd.chestlocker.info:
     default: op
+    description: ""
+  cmd.chestlocker:
+    default: true
     description: ""
