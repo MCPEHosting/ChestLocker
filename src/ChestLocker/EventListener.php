@@ -17,13 +17,13 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\block\BlockBreakEvent;
+use pocketmine\utils\Config;
 
 class EventListener implements Listener
 {
 	
-	public function __construct(protected Main $plugin)
+	public function __construct(protected Main $plugin, protected Config $cfg)
 	{
-		$this->plugin = $plugin;
 	}
 	
 	public function onPlayerJoin(PlayerJoinEvent $event)
@@ -102,7 +102,7 @@ class EventListener implements Listener
 	
 	public function onBlockDestroy(BlockBreakEvent $event)
 	{
-		$this->cfg = $this->plugin->getConfig()->getAll();
+		$cfg = $this->cfg->getAll();
 		$player    = $event->getPlayer();
 		if ($event->getBlock()->getTypeId() == Main::$ITEM_ID) {
 			$chest = $event->getPlayer()->getWorld()->getTile($event->getBlock()->getPosition()->asVector3());

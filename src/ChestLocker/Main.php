@@ -81,7 +81,7 @@ class Main extends PluginBase{
         $this->saveDefaultConfig();
         $this->data = $this->getDataFolder();
 
-        Server::getInstance()->getPluginManager()->registerEvents(new EventListener($this), $this);
+        Server::getInstance()->getPluginManager()->registerEvents(new EventListener($this, $this->getConfig()), $this);
         Server::getInstance()->getCommandMap()->registerAll("CHESTLOCK", [
             new Commands($this),
             new LockChest($this),
