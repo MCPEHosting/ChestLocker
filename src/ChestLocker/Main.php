@@ -74,7 +74,7 @@ class Main extends PluginBase{
 	
     public function onEnable(): void{
 
-        self::$ITEM_ID = VanillaBlocks::CHEST()->asItem()->getTypeId();
+        self::$ITEM_ID = VanillaBlocks::CHEST()->getTypeId();
 
         @mkdir($this->getDataFolder());
         @mkdir($this->getDataFolder() . Main::_DIRECTORY);
